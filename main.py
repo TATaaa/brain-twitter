@@ -48,11 +48,11 @@ class StreamListener(tweepy.StreamListener):
             pattern = "#brain"
             if re.search(pattern, status.text) is not None:
                 stre = re.sub(pattern, "", status.text)
-                stre = re.sub(" ", "", stre)
-                stre = re.sub("　", "", stre)
                 stre = re.sub("&gt;", ">", stre)
                 stre = re.sub("&lt;", "<", stre)
                 stre = re.sub("&amp;", "&", stre)
+                stre = re.sub("\n", "", stre)
+                stre = stre.strip()
                 stre = stre.encode("utf-8")
                 print stre
                 print len(stre)
@@ -72,10 +72,10 @@ class StreamListener(tweepy.StreamListener):
             return False
 
 def oauth():
-    CK = ""
-    CS = ""
-    AT = ""
-    AS = "" 
+    CK = "vnFmObEfM2UrG0gD84936ugN0"
+    CS = "8nh3iu5Xbwa9JnUlrluCdeAOtsxYA9kpxI7L97oN3rOcJIgLor"
+    AT = "750966877325787136-32b3fydkQN6k08vxA1aernKagIMD4pJ"
+    AS = "AjHmSpzuvTW2H5DxggjcAHy2G98RpkibF6ryhY1ZEsAhE" 
 
     auth = tweepy.OAuthHandler(CK, CS)
     auth.set_access_token(AT, AS)
