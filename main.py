@@ -72,10 +72,10 @@ class StreamListener(tweepy.StreamListener):
             return False
 
 def oauth():
-    CK = "vnFmObEfM2UrG0gD84936ugN0"
-    CS = "8nh3iu5Xbwa9JnUlrluCdeAOtsxYA9kpxI7L97oN3rOcJIgLor"
-    AT = "750966877325787136-32b3fydkQN6k08vxA1aernKagIMD4pJ"
-    AS = "AjHmSpzuvTW2H5DxggjcAHy2G98RpkibF6ryhY1ZEsAhE" 
+    CK = ""
+    CS = ""
+    AT = ""
+    AS = "" 
 
     auth = tweepy.OAuthHandler(CK, CS)
     auth.set_access_token(AT, AS)
